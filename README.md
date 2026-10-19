@@ -1,6 +1,6 @@
 # Lernraum KI
 
-Lokaler Prototyp eines Selbstlernkurses für Berufsschüler (18–25 Jahre), mit kaufmännischen Beispielen. Sechs Kapitel werden vorgestellt; verfügbar sind **KI im Büroalltag** und **Vom Chat zum Agenten**.
+Prototyp eines Selbstlernkurses für Berufsschüler (18–25 Jahre), mit kaufmännischen Beispielen. Sechs Kapitel werden vorgestellt; verfügbar sind **KI im Büroalltag** und **Vom Chat zum Agenten**.
 
 ## Vorschau
 
@@ -31,7 +31,7 @@ node --test --test-isolation=none
 
 ## GitHub Pages vorbereiten
 
-Die veröffentlichbaren Dateien sind `index.html`, `404.html`, `kurse/` und `assets/`. Für eine spätere Bereitstellung wird nur diese Auswahl in ein Veröffentlichungsverzeichnis oder einen Pages-Branch übernommen; `docs/qa/`, Tests und interne Quellen werden nicht als Lerninhalt ausgeliefert. Das öffentliche Repository ist danspenhoff-dev/lernraum-ki. Die Pages-Konfiguration steht noch aus.
+Die veröffentlichbaren Dateien sind `index.html`, `404.html`, `kurse/` und `assets/`. Für eine spätere Bereitstellung wird nur diese Auswahl in ein Veröffentlichungsverzeichnis oder einen Pages-Branch übernommen; `docs/qa/`, Tests und interne Quellen werden nicht als Lerninhalt ausgeliefert. Das öffentliche Repository ist danspenhoff-dev/lernraum-ki. GitHub Pages verwendet den Branch gh-pages mit dem Verzeichnis / (root). Die Webadresse lautet https://danspenhoff-dev.github.io/lernraum-ki/. Änderungen an main werden derzeit nicht automatisch veröffentlicht: Seiten neu erzeugen, prüfen und ausschließlich index.html, 404.html, assets/, kurse/ sowie eine leere .nojekyll-Datei auf gh-pages aktualisieren.
 
 Die Seite verwendet relative Ressourcenpfade. Die lokale Vorschau testet den Unterpfad `/lernraum-ki/`. Die eigenständige 404-Seite benötigt keine externen Ressourcen und erhält ihren Rückweg beim Erzeugen. Für ein Repository namens `mein-kurs` die Seiten mit `node scripts/build-pages.mjs --base=/mein-kurs/` erzeugen; für eine eigene Domain `--base=/` verwenden. Ohne Angabe gilt `/lernraum-ki/`. Den tatsächlichen Pages-Pfad vor Veröffentlichung prüfen. Der lokale Server setzt den Rückweg entsprechend seinem eigenen `--base`-Parameter.
 
