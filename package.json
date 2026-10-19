@@ -1,1 +1,0 @@
-{"name":"lernraum-ki","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node --test --test-isolation=none","build":"node scripts/build-pages.mjs","preview":"node scripts/serve.mjs --base=/lernraum-ki/"}}
