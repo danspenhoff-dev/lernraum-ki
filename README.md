@@ -7,10 +7,10 @@ Lokaler Prototyp eines Selbstlernkurses für Berufsschüler (18–25 Jahre), mit
 Node.js 22.13 oder neuer verwenden; die Entwicklung wurde mit 24.19 geprüft. Keine Pakete installieren.
 
 ```text
-node scripts/serve.mjs --base=/lernseiten/
+node scripts/serve.mjs --base=/lernraum-ki/
 ```
 
-Danach http://127.0.0.1:4173/lernseiten/ öffnen. Der Server lauscht nur auf dem eigenen Computer. Mit Strg+C beenden. Eine andere Portnummer lässt sich über die Umgebungsvariable `PORT` wählen. Für interaktive Übungen einen HTTP-Server verwenden, nicht nur eine HTML-Datei doppelklicken.
+Danach http://127.0.0.1:4173/lernraum-ki/ öffnen. Der Server lauscht nur auf dem eigenen Computer. Mit Strg+C beenden. Eine andere Portnummer lässt sich über die Umgebungsvariable `PORT` wählen. Für interaktive Übungen einen HTTP-Server verwenden, nicht nur eine HTML-Datei doppelklicken.
 
 ## Bearbeiten und prüfen
 
@@ -31,9 +31,9 @@ node --test --test-isolation=none
 
 ## GitHub Pages vorbereiten
 
-Die veröffentlichbaren Dateien sind `index.html`, `404.html`, `kurse/` und `assets/`. Für eine spätere Bereitstellung wird nur diese Auswahl in ein Veröffentlichungsverzeichnis oder einen Pages-Branch übernommen; `docs/qa/`, Tests und interne Quellen werden nicht als Lerninhalt ausgeliefert. Das öffentliche Repository ist `danspenhoff-dev/lernraum-ki`. Die Pages-Konfiguration steht noch aus.
+Die veröffentlichbaren Dateien sind `index.html`, `404.html`, `kurse/` und `assets/`. Für eine spätere Bereitstellung wird nur diese Auswahl in ein Veröffentlichungsverzeichnis oder einen Pages-Branch übernommen; `docs/qa/`, Tests und interne Quellen werden nicht als Lerninhalt ausgeliefert. Das öffentliche Repository ist danspenhoff-dev/lernraum-ki. Die Pages-Konfiguration steht noch aus.
 
-Die Seite verwendet relative Ressourcenpfade. Die lokale Vorschau testet den Unterpfad `/lernseiten/`. Die eigenständige 404-Seite benötigt keine externen Ressourcen und erhält ihren Rückweg beim Erzeugen. Für ein Repository namens `mein-kurs` die Seiten mit `node scripts/build-pages.mjs --base=/mein-kurs/` erzeugen; für eine eigene Domain `--base=/` verwenden. Ohne Angabe gilt `/lernseiten/`. Den tatsächlichen Pages-Pfad vor Veröffentlichung prüfen. Der lokale Server setzt den Rückweg entsprechend seinem eigenen `--base`-Parameter.
+Die Seite verwendet relative Ressourcenpfade. Die lokale Vorschau testet den Unterpfad `/lernraum-ki/`. Die eigenständige 404-Seite benötigt keine externen Ressourcen und erhält ihren Rückweg beim Erzeugen. Für ein Repository namens `mein-kurs` die Seiten mit `node scripts/build-pages.mjs --base=/mein-kurs/` erzeugen; für eine eigene Domain `--base=/` verwenden. Ohne Angabe gilt `/lernraum-ki/`. Den tatsächlichen Pages-Pfad vor Veröffentlichung prüfen. Der lokale Server setzt den Rückweg entsprechend seinem eigenen `--base`-Parameter.
 
 ## Datenschutz und Grenzen
 

@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {evaluateDecision,updateOfferApproval} from '../assets/js/simulation.js';
+const base={cost:500,budget:500,action:'book',allowedActions:['plan','book'],approved:true,untrustedInstruction:false};
+test('Budgetgrenze gilt einschließlich Gleichheit',()=>{assert.equal(evaluateDecision(base).status,'allowed');assert.equal(evaluateDecision({...base,cost:600}).status,'blocked');});
+test('Freigabe erweitert keine Befugnisse',()=>assert.equal(evaluateDecision({...base,allowedActions:['plan']}).status,'blocked'));
+test('Buchung braucht Freigabe, Planung nicht',()=>{assert.equal(evaluateDecision({...base,approved:false}).status,'needs-approval');assert.equal(evaluateDecision({...base,action:'plan',approved:false}).status,'allowed');});
+test('Fremdanweisung wird blockiert',()=>assert.equal(evaluateDecision({...base,untrustedInstruction:true}).status,'blocked'));
+test('ungültige Zahlen werden abgelehnt',()=>{for(const v of [-1,NaN,Infinity,'500',null]){assert.equal(evaluateDecision({...base,cost:v}).status,'blocked');assert.equal(evaluateDecision({...base,budget:v}).status,'blocked');}});
+test('ein neues Angebot benötigt eine neue Freigabe',()=>{assert.equal(updateOfferApproval('420','500',true),false);assert.equal(updateOfferApproval('420','420',true),true);assert.equal(updateOfferApproval('420','420',false),false);});
